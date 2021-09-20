@@ -7,7 +7,7 @@
 int main()
 {
   char userinput[STRING_SIZE], word[STRING_SIZE];
-  char *p, *output;
+  char *p, *output, **tokenizer;
   int is_space, is_non_space, word_count;
 
   word_count = 0;
@@ -48,6 +48,9 @@ int main()
   // Return a copy of word from (0,len) given len.
   output = copy_str(p, 3);
   printf("New word copy: %s\n", output);
+
+  // Tokenize a given phrase
+  tokenizer = tokenize(p);
   
   return 0;
 }

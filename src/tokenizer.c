@@ -67,3 +67,21 @@ char *copy_str(char *inStr, short len)
 
   return string_copy;
 }
+
+char **tokenize(char* str)
+{
+  int word__count = count_words(str);
+  char **token_holder, *word_end;
+  int i;
+
+  for(i = 0; i <= word__count; i++)
+  {
+    str = word_start(str);
+    word_end = word_terminator(str);
+    char *word_copy = copy_str(str, (word_end - str));
+    str = word_terminator(str); str++;
+    token_holder[i] = word_copy;
+  }
+
+  return token_holder;
+}
