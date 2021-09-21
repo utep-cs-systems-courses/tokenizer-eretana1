@@ -46,11 +46,15 @@ int main()
   printf("Number of words: %d\n", word_count);
 
   // Return a copy of word from (0,len) given len.
-  output = copy_str(p, 3);
+  output = copy_str(p, 4);
   printf("New word copy: %s\n", output);
 
   // Tokenize a given phrase
   tokenizer = tokenize(p);
+
+  // Print all tokens
+  printf("\n------Printing tokens------\n");
+  print_tokens(tokenizer);
   
   return 0;
 }

@@ -33,7 +33,7 @@ char *word_terminator(char *word)
   {
     word++;
   }
-  return word - 1;
+  return word;
 }
 
 int count_words(char *str)
@@ -70,18 +70,29 @@ char *copy_str(char *inStr, short len)
 
 char **tokenize(char* str)
 {
-  int word__count = count_words(str);
-  char **token_holder, *word_end;
+  int word_count = count_words(str);
+  char **token_holder = (char**) malloc((word_count + 1) * sizeof(char*));
+  char *word_end;
   int i;
 
-  for(i = 0; i <= word__count; i++)
+  for(i = 0; i < word_count; i++)
   {
     str = word_start(str);
     word_end = word_terminator(str);
-    char *word_copy = copy_str(str, (word_end - str));
-    str = word_terminator(str); str++;
-    token_holder[i] = word_copy;
+    token_holder[i] = copy_str(str, (word_end - str));
+    str = word_terminator(str);
   }
+  token_holder[i] = NULL;
 
   return token_holder;
+}
+
+void print_tokens(char **tokens)
+{
+  int i;
+  for(i = 0; tokens[i] != NULL; i++)
+  {
+    printf("tokens[%d] = %s\n", i, tokens[i]);
+  }
+  printf("\rtokens[%d] = 0\n", i);
 }
