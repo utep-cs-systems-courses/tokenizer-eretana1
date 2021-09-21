@@ -55,6 +55,9 @@ int main()
   // Print all tokens
   printf("\n------Printing tokens------\n");
   print_tokens(tokenizer);
+
+  // Free previously allocated tokens
+  free_tokens(tokenizer);
   
   return 0;
 }

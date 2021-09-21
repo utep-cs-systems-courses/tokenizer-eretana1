@@ -96,3 +96,16 @@ void print_tokens(char **tokens)
   }
   printf("\rtokens[%d] = 0\n", i);
 }
+
+void free_tokens(char **tokens)
+{
+  int i;
+  for(i = 0; tokens[i] != NULL; i++)
+  {
+    free(tokens[i]);
+  }
+  
+  free(tokens[i]);
+  free(tokens);
+  printf("Tokens have been freed.\n");
+}
