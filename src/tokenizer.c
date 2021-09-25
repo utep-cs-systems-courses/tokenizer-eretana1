@@ -94,7 +94,6 @@ void print_tokens(char **tokens)
   {
     printf("tokens[%d] = %s\n", i, tokens[i]);
   }
-  printf("\rtokens[%d] = 0\n", i);
 }
 
 void free_tokens(char **tokens)
