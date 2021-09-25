@@ -36,7 +36,8 @@ int main()
     }
     else if(word[0] == '!')
     {
-      printf("History at [%d]: %s", word[1], get_history(test_list, word[1]));
+      int index = word[1] - '0';
+      printf("History at [%c]: %s\n", word[1], get_history(test_list, index));
     }
     else
     {
@@ -74,7 +75,9 @@ int main()
     
       // Free previously allocated tokens
       free_tokens(tokenizer);
-    }
-  }
+    } // end of else
+  } // end of user input while loop
+
+  free_history(test_list);
   return 0;
 }
