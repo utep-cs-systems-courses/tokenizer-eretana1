@@ -17,8 +17,8 @@ Complete the methods within [tokenizer.c](tokenizer.c) which include:
 - tokenize
 - print_tokens
 - free_tokens
-which will allow us to tokenize, print its tokens, and free the tokens. For
-- e.g. :
+
+which will allow us to tokenize, print its tokens, and free the tokens. For e.g. :
 ```
 Type a phrase to tokenize: Hello world, this is a test
 ```
